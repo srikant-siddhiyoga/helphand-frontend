@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 :root {
   --background: #ffffff;
@@ -16,7 +18,8 @@
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--background) url('../../public/assets/bg.jpg') no-repeat center center fixed;
+  background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -24,4 +27,93 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Custom Button Styles */
+.custom-button {
+  background-color: #7db3bf;
+  color: #000000;
+}
+
+.custom-button:hover {
+  background-color: #d7986f;
+  color: #ffffff; 
+}
+
+/* Navbar Custom Font */
+.Navbar {
+  font-family: 'Fascinate Inline', cursive;
+}
+
+/* Responsive Form Styling */
+.form-container {
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    width: 50%; /*Limit width on larger screens */
+    padding: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--foreground);
+  }
+
+  .form-control {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  h2 {
+    width: 50%;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .form-control {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 425px) {
+    .form-container {
+      width: 75%;
+      margin: 2rem; /*Adjust margins as needed for smaller screens */
+    }
+  }
+}
+
+/* Additional Styles for Improved User Experience */
+.form-control {
+  border: 1px solid #dcdcdc;
+  box-shadow: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #7db3bf;
+  box-shadow: 0 0 5px rgba(125, 179, 191, 0.5);
+}
+
+.scrollable-div {
+  max-height: 778px; /* Set the height you want */
+  overflow-y: auto;  /* Makes the div scrollable vertically */
+  width: 100%;       /* Ensures it takes the full width of the column */
+  padding-right: 10px; /* Optional: Adds padding to avoid content cutting off by scrollbar */
 }
